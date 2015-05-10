@@ -1,2 +1,2 @@
-# kpw.org-web2py
-My old website built with web2py and python
+# kpw.org
+My old website built with web2py and python.
