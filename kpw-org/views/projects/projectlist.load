@@ -1,0 +1,18 @@
+{{if len(projects):}}
+    {{for project in projects:}}
+    <div class="media">
+        <a class="pull-left iframe-frame aiframe" href="#">
+            <iframe class="iframe projectiframe" src="{{=project.link}}" width="1024" height="768" scrolling="no" allowtransparency="true" frameborder="1">Sorry, Your Browser doesn't support iframes.</iframe>
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{=project.title}}</h4>
+            <p>
+                {{=project.description}}
+            </p>
+            <div class="btn-group">
+                {{=A(TAG.i(_class="icon icon-globe icon-white"), T(' Website'), _href=project.link, _class="btn btn-mini btn-inverse")}}{{=A(TAG.i(_class="icon icon-eye-open icon-white"), T(' Code'), _href=project.code, _class="btn btn-mini btn-info")}}
+            </div>
+        </div>
+    </div>
+    {{pass}}
+{{pass}}

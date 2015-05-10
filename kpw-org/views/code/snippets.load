@@ -1,0 +1,15 @@
+{{if files:}}
+    <table class="table table-bordered">
+    {{for file in files:}}
+        {{=TR(TD(file))}}
+    {{pass}}
+    </table>
+
+{{else:}}
+    <table class="table table-bordered">
+    {{for lang in LANG_TYPE:}}
+        {{=TR(TD(A(T(lang), _href=URL('code','snippets.html', vars={'language': lang}), cid=request.cid)))}}
+    {{pass}}
+    </table>
+
+{{pass}}

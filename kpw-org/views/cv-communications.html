@@ -1,0 +1,26 @@
+{{if communications:}}
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <h3 id="knowledge-communications" class="sub-header">Communications</h3>
+            <hr />
+        </div>
+        {{for commtype in communications:}}
+        <!--{{=commtype}}-->
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{=commtype}}</h3>
+                </div>
+                <div class="panel-body">
+                {{for comm in communications[commtype]:}}
+                    <a type="button" class="btn btn-default margin-top-two" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="auto" data-content="{{=comm.my_background}}" data-original-title="{{=comm.title}} Background" title="{{=comm.title}} Background" >{{=comm.title}}</a>
+                {{pass}}
+                </div>
+            </div><!--/End Panel-->
+        </div>
+        {{pass}}
+
+{{pass}}
+   </div><!--/End 12-->
+</div><!--/End Row-->

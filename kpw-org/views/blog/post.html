@@ -1,0 +1,18 @@
+{{extend 'post-layout.html'}}
+<div class="text-center">
+<h1>{{=T(post.title)}}</h1>
+<h3>{{=T(post.subtitle)}}</h3>
+    {{if post.tags:}}
+    {{for tag in post.tags:}}
+        {{=SPAN(tag, _class="label label-info")}}
+    {{pass}}
+    {{pass}}
+</div>
+<hr/>
+{{=XML(postcontent)}}
+<br />
+<p class="text-left muted">
+    <small>Date Posted: {{=post.date_posted}}</small><br />
+    <small>Date Updated: {{=post.date_updated}}</small><br />
+</p>
+{{=A(T("Back to Posts"), _href=URL('blog','index'), _class="btn btn-primary")}}

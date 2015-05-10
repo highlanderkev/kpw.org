@@ -1,0 +1,15 @@
+{{if len(examples):}}
+<ul class="thumbnails">
+    {{for example in examples:}}
+    <li>
+        <div class="well">
+            <h3>{{=TAG.i(_class=example.icon)}}{{=T(" " + example.title)}}</h3>
+            <p>{{=example.description}}</p>
+            <div class="btn-group">
+                {{=A(TAG.i(_class="icon icon-globe icon-white"), T(' Live Example'), _href=example.link, _class="btn btn-mini btn-inverse")}}{{=A(TAG.i(_class="icon icon-download icon-white"), T(' Download'), _href=example.downloadable, _class="btn btn-mini btn-success")}}{{=A(TAG.i(_class="icon icon-eye-open icon-white"), T(' See Code'), _href=example.code, _class="btn btn-mini btn-info")}}
+            </div>
+        </div>
+    </li>
+    {{pass}}
+</ul>
+{{pass}}

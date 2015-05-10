@@ -1,0 +1,48 @@
+<!--Le javascript
+=================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script>
+    $( document ).ready(function (){
+        <!-- Popover Function -->
+        $('[data-toggle="popover"]').popover({placement:'auto'});
+
+        <!-- Tab Function -->
+        $('myTab a:last').tab('show');
+
+        <!-- Affix Function -->
+        $(".sidenav").affix({
+            offset: {
+                top: 80,
+                bottom: function(){
+                    return (this.bottom = $("#footer").outerHeight(true))
+                }
+            }
+        });
+
+    });
+
+    <!--Collapse Collapsibles-->
+    $('.collapse').collapse();
+
+    <!--Combine Spyscroll with Collapse because issues -->
+    $('.collapse').on('hidden', function () {
+        $('[data-spy="scroll"]').each(function () {
+            var $spy = $(this).scrollspy('refresh')
+        });
+    });
+
+
+    <!--SideMenu Hide Function-->
+    hideHeader();
+
+    function hideHeader(){
+        var w = $(window).width();
+        if(w < 965){
+            $("#header").hide();
+        }else{
+            $("#header").show();
+        }
+    }
+
+</script>

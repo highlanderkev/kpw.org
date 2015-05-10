@@ -1,0 +1,22 @@
+{{right_sidebar_enabled=True}}
+{{extend 'layout.html'}}
+<div class="alert alert-success alert-dismissable">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4><strong>New!</strong> -> Check out some {{=A(T('code snippets'), _href=URL('code', 'index'), _style="color: #000;",)}}.</h4>
+    <brr />
+</div>
+<hr />
+<h3>{{=A(T(' web2py'), _href="http://web2py.com/", _target="_blank")}}{{=T(' Example Applications:')}}</h3>
+{{=LOAD('projects','web2pyexamples.load', ajax=True)}}
+<hr />
+<h3>{{=TAG.i(_class="fa fa-pencil-square-o")}}{{=T(" Blog Posts:")}}</h3>
+{{=LOAD('blog','postlist.load', ajax=True)}}
+<hr />
+<h3>{{=TAG.i(_class="fa fa-wrench")}}{{=T(" Projects:")}}</h3>
+{{=LOAD('projects','projectlist.load', ajax=True)}}
+<hr />
+{{block right_sidebar}}
+<h3>{{=A(TAG.i(_class="fa fa-twitter"), _href="https://twitter.com/kevinwestropp", _target="_blank")}}{{=T(" Twitter Feed:")}}</h3>
+{{=LOAD('default','twitterfeed.load', ajax=True)}}
+<hr />
+{{end}}

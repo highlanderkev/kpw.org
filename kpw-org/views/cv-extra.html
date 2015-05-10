@@ -1,0 +1,31 @@
+{{if organizations:}}
+<!--Extracurricular Section
+==================-->
+<div class="row content-section">
+    <div class="col-md-12" >
+        <div class="text-center">
+            <h2 id="extracurricular" class="page-header"><i class="fa fa-trophy"></i> Extracurriculars</h2>
+            <h3 id="extracurricular-organizations" class="sub-header">Organizations</h3>
+            <hr />
+        </div>
+        {{for organization in organizations:}}
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="margin-sides-ten">
+                    {{=organization.title}} {{=A(T('Website'), SPAN(_class="glyphicon glyphicon-new-window"), _href=organization.website, _target="_blank", _class="badge alert-success")}}
+                </h4>
+            </div>
+            <div class="col-md-12">
+                <p class="paragraph">
+                    {{=organization.overview}}
+                </p>
+            </div>
+            <br />
+        </div><!--/End Row-->
+        {{pass}}
+
+        {{include 'cv-volunteer.html'}}
+
+    </div><!--/End 12-->
+</div><!--/End Extracurricular Row-->
+{{pass}}

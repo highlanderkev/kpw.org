@@ -1,0 +1,23 @@
+<nav id="navbar" class="navbar navbar-default" role="navigation" >
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    {{=A(IMG(_src=URL('static', 'images/kpw.png'), _class="navbar-brand"))}}
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li>{{=A(T('Home'), _href=URL('default','index'),)}}</li>
+      <li>{{=A(T('Projects'), _href=URL('projects','index'),)}}</li>
+      <li>{{=A(T('Blog'), _href=URL('blog','index'),)}}</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>{{=A(TAG.i(_class="fa fa-file-pdf-o"), T(' Download PDF'), _href=URL('static','file/resume.pdf'),)}}</li>
+    </ul>
+  </div><!--/.navbar-collapse -->
+</nav><!--/End Navbar-->

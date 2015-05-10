@@ -1,0 +1,14 @@
+<script>
+    // Angular Module
+    var myAngular = angular.module('myAngular', []);
+
+    myAngular.config(function($interpolateProvider) {
+        //allow Web2py views and Angular to co-exist
+        $interpolateProvider.startSymbol('{[{');
+        $interpolateProvider.endSymbol('}]}');
+    });
+
+    myAngular.controller('myAngularCtrl', function($scope) {
+        $scope.message = 'Hello World from Angular!';
+    });
+</script>

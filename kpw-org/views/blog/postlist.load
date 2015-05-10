@@ -1,0 +1,22 @@
+{{if len(posts):}}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>{{=T('Title')}}</th>
+            <th>{{=T('Description')}}</th>
+            <th>{{=T('Date Updated')}}</th>
+            <th>{{=T('Date Posted')}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for post in posts:}}
+        <tr>
+            <td>{{=A(T(post.title), _href=URL('blog','post.html',args=post.id))}}</td>
+            <td>{{=T(post.description)}}</td>
+            <td>{{=get_dateday(post.date_updated)}}</td>
+            <td>{{=get_dateday(post.date_posted)}}</td>
+        </tr>
+        {{pass}}
+    </tbody>
+</table>
+{{pass}}

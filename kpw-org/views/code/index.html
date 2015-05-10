@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+{{include 'angularScript.html'}}
+<div class="row">
+<script>
+    myAngular.controller('snippetCtrl', function($scope){
+        $scope.fileList = {{=XML(files)}};
+        $scope.preview = function(file){
+            index = $scope.fileList.indexOf(file);
+            $scope.selectedFile = index;
+        }
+    });
+</script>
+<div ng-app='myAngular'>
+        <div ng-controller='snippetCtrl'>
+            <div class="span8">
+                <h3>{{=TAG.i(_class="fa fa-file-code-o")}} File: {[{fileList[selectedFile].title}]}</h3>
+                <hr />
+                <div class="well" style="min-height:800px;">
+                    <?prettify?>
+                    <pre class="prettyprint">
+                        {[{fileList[selectedFile].body}]}
+                    </pre>
+                </div><!--/End Well-->
+            </div><!--/End 8-->
+
+            <div id="scrollbar" class="span4 offset8" data-spy="affix" data-offset-top="50">
+                <h3>{{=TAG.i(_class="fa fa-code")}}{{=T(" Snippets:")}}</h3>
+                <ul>
+                     <li ng-repeat='file in fileList | orderBy:"title" ' ng-click='preview(file)'>
+                         <a>{[{file.title}]}</a>
+                     </li>
+                </ul>
+                <hr />
+            </div><!--/End 4-->
+
+        </div>
+    </div>
+</div>

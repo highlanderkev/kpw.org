@@ -1,0 +1,44 @@
+<!--[if HTML5]><![endif]-->
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]><html class="ie ie6 ie-lte9 ie-lte8 ie-lte7 no-js" lang="{{=T.accepted_language or 'en'}}"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7 ie-lte9 ie-lte8 ie-lte7 no-js" lang="{{=T.accepted_language or 'en'}}"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8 ie-lte9 ie-lte8 no-js" lang="{{=T.accepted_language or 'en'}}"> <![endif]-->
+<!--[if IE 9]><html class="ie9 ie-lte9 no-js" lang="{{=T.accepted_language or 'en'}}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{=T.accepted_language or 'en'}}"> <!--<![endif]-->
+<head>
+{{include 'cv-head.html'}}
+</head>
+<body onresize="hideHeader()" data-spy="scroll" data-target="#sidenavbar">
+<div class="container" >
+    <!--NavBar-->
+    {{include 'cv-navbar.html'}}
+
+	<div id="main-row" class="row">
+
+		<div class="col-md-2 affix">
+			<!--Header-->
+				{{include 'cv-header.html'}}
+        </div>
+
+        <div class="col-md-9 col-md-offset-3">
+			<section id="main-section" role="main">
+				{{block center}}
+				{{include}}
+				{{end}}
+			</section>
+		</div>
+
+	</div><!--/End main row-->
+</div><!--/End container-->
+<!--Footer-->
+<footer id="footer">
+	<div class="container">
+		{{include 'cv-footer.html'}}
+    </div><!-- /End Footer Container -->
+</footer><!--/End Footer-->
+<!--Scripts-->
+{{include 'cv-javascripts.html'}}
+<!--/End Scripts -->
+</body>
+</html>

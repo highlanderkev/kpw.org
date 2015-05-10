@@ -1,0 +1,7 @@
+{{extend 'project-layout.html'}}
+<h1>{{=A(T(' web2py'), _href="http://web2py.com/", _target="_blank")}}{{=T(' Example Projects:')}}</h1>
+{{=LOAD('projects','web2pyexamples.load', ajax=True)}}
+<hr />
+<h1>{{=TAG.i(_class="fa fa-wrench")}}{{=T(" Projects:")}}</h1>
+{{=LOAD('projects','projectgroup.load', ajax=True)}}
+<hr />

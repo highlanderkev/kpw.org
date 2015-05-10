@@ -1,0 +1,15 @@
+{{if len(posts):}}
+        {{for post in posts:}}
+        <div class="media well">
+            <div class="media-body">
+                <h4 class="media-heading">{{=A(T(post.title), _href=URL('blog','post.html',args=post.id))}}</h4>
+                <p>{{=T(post.description)}}</p>
+                {{for tag in post.tags:}}<span class="label label-info">{{=tag}}</span> {{pass}}
+                <br />
+                Updated: {{=get_dateday(post.date_updated)}}
+                <br />
+                Posted: {{=get_dateday(post.date_posted)}}
+            </div>
+        </div>
+        {{pass}}
+{{pass}}

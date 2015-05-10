@@ -1,0 +1,25 @@
+{{if len(projects):}}
+    {{for i, project in enumerate(projects):}}
+    {{if i%3==0:}}
+    <ul class="thumbnails">
+    {{pass}}
+        <li class="span4">
+            <div class="thumbnail">
+                <div class="iframe-frame aiframe" style="margin:15px 15px 15px 15px; width:300px; height:200px; display:block;">
+                    <iframe class="iframe projectiframe" src="{{=project.link}}" width="1024" height="768" scrolling="no" allowtransparency="true" frameborder="1">Sorry, Your Browser doesn't support iframes.</iframe>
+                </div>
+                <h3 class="text-center">{{=T(project.title)}}</h3>
+                <p class="text-center">{{=T(project.description)}}</p>
+                <div align="center">
+                    {{=A(TAG.i(_class='icon-globe icon-white'), T(" Website"), _href=project.link, _class="btn btn-primary", _target="_blank")}}
+                    {{if len(project.code):}}
+                        {{=A(TAG.i(_class='icon-eye-open icon-white'), T(" Code"), _href=project.code, _class="btn btn-info", _target="_blank")}}
+                    {{pass}}
+                </div>
+            </div>
+        </li>
+    {{if i%3==2:}}
+    </ul>
+    {{pass}}
+    {{pass}}
+{{pass}}

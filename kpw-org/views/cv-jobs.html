@@ -1,0 +1,39 @@
+{{if jobs:}}
+<div class="text-center">
+    <h3 id="experience-professional" class="sub-header">Professional</h3>
+    <hr />
+</div>
+{{for job in jobs:}}
+<!-- {{=job.company}} -->
+<div class="row">
+    <div class="col-md-8">
+        <h4 class="margin-sides-ten">
+            {{=job.company}} {{=A(T('Website'), SPAN(_class="glyphicon glyphicon-new-window"), _href =job.website,  _target="_BLANK", _class="badge alert-success")}}
+        </h4>
+    </div>
+    <div class="col-md-4">
+        <h4 class="pull-right margin-sides-ten">{{=job.geo_location}}</h4>
+    </div>
+</div><!--/End Row-->
+<div class="row">
+    <div class="col-md-6">
+        <span class="italics-sub margin-sides-ten">{{=job.title}}</span>
+    </div>
+    <div class="col-md-6">
+        <h5 class="pull-right margin-sides-ten margin-topbottom-zero">
+        {{=get_datemonthyear(job.datefrom)}} - {{=get_datemonthyear(job.dateto)}}
+        </h5>
+    </div>
+</div><!--/End Row-->
+<div class="row">
+    <div class="col-md-12">
+        <ul>
+        {{for task in job.tasks:}}
+            <li class="margin-topbottom-five">{{=task}}</li>
+        {{pass}}
+        </ul>
+    </div>
+</div><!--/End Row-->
+<br />
+{{pass}}
+{{pass}}

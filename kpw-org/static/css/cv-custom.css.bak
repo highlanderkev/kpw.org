@@ -1,0 +1,163 @@
+/* Custom Style Rules for CV by Kevin Patrick Westropp */
+
+html, body, .container {
+    height: 100%;
+}
+
+body > .container {
+    height: auto; 
+    min-height: 100%;
+}
+
+body {
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    background-color: #f2f2f2 !important;
+}
+
+img {
+    height: auto;
+}
+
+.content-section {
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+
+.page-header {
+    background-color: #d2e3ec;
+    padding-top: 5px;
+    border: 1px solid #1288c3;
+}
+
+#header {
+    padding: 10px;
+}
+
+.sub-header {
+    color: #1288c3;
+    padding-top: 10px;
+}
+
+.header { 
+    background-color: #d2e3ec;
+    border: 1px solid #1288c3;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
+.header h1 {
+    font-size: 35px;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.header h2, h3 {
+    text-align: center;
+}
+
+
+.sidenav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidenav .nav .nav {
+    display: none;
+    padding-bottom: 10px;
+}
+
+.sidenav .nav > .active > .nav {
+    display: block;
+}
+
+.sidenav .nav > li > a {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    padding: 4px 20px;
+}
+
+.sidenav > ul > .active > a {
+    border-left: 3px solid #1288c3;
+}
+
+.sidenav .nav .nav > li > a {
+    padding-left: 30px;
+}
+
+.sidenav > ul > li > a:hover {
+    border-left: 1px solid #1288c3;
+}
+
+.sidenav .nav > .active > a, .sidenav .nav > .active:hover > a, .sidenav .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: 700;
+    color: #1288c3;
+    border-left: 2px solid #1288c3;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #f2f2f2;
+}
+
+.back-to-top {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.margin-sides-ten {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.paragraph {
+    margin: 5px 10px 5px 10px;
+    text-indent: 15px;
+}
+
+.margin-top-thirty {
+    margin-top: 30px;
+}
+
+.margin-top-two {
+    margin-top: 2px;
+}
+
+.margin-topbottom-zero {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.margin-topbottom-five {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.block {
+    display: block;
+}
+
+
+.italics-sub {
+    font-style:italic;
+    font-size: 15px;
+}
+
+.bolded {
+    font-weight: 700;
+}
+
+footer {
+    background: #d2e3ec;
+    position:relative;
+    bottom:0;
+    width:100%;
+    min-height: 200px;
+}
+
+.footer-content {
+    text-align: center;
+    margin-top: 90px;
+}

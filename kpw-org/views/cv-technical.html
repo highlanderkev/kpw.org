@@ -1,0 +1,32 @@
+{{if technical:}}
+<!--Technical Section
+==============-->
+<div class="row content-section">
+    <div class="col-md-12" >
+        <div class="text-center">
+            <h2 id="knowledge" class="page-header"><i class="fa fa-graduation-cap"></i> Knowledge and Skills</h2>
+            <h3 id="knowledge-technical" class="sub-header">Technical</h3>
+            <hr />
+        </div>
+        {{for techtype in technical:}}
+         <!--{{=techtype}}-->
+            <div class="col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{=techtype}}</h3>
+                    </div>
+                    <div class="panel-body">
+                    {{for tech in technical[techtype]:}}
+                        <a type="button" class="btn btn-default margin-top-two" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="auto" data-content="{{=tech.my_background}}" data-original-title="{{=tech.title}} Background" title="{{=tech.title}} Background" href="{{=tech.website}}" target="_blank">{{=tech.title}}</a>
+                    {{pass}}
+                    </div>
+                </div><!--/End Panel-->
+            </div>
+        {{pass}}
+
+        {{include "cv-communications.html"}}
+
+{{pass}}
+    </div><!--/End 12-->
+</div><!--/End Row-->
+<!--/End Knowledge Section-->

@@ -1,0 +1,64 @@
+<!--Eduction Section
+====================-->
+<div class="row content-section">
+    <div class="col-md-12" >
+        <div class="text-center">
+            <h2 id="education" class="page-header"><i class="fa fa-university"></i> Education</h2>
+            <h3 id="education-degrees" class="sub-header">Degrees</h3>
+            <hr />
+        </div>
+    {{for diploma in diplomas:}}
+    <!-- diploma.university -->
+    <div class="row">
+      <div class="col-md-8">
+        <h4 class="margin-sides-ten">{{=diploma.university}} {{=A(T('Website'), SPAN(_class="glyphicon glyphicon-new-window"), _href=diploma.website, _target="_BLANK", _class="badge alert-success")}}
+        </h4>
+      </div>
+      <div class="col-md-4">
+        <h4 class="pull-right margin-sides-ten">{{=diploma.geolocation}}</h4>
+      </div>
+    </div><!--/End Row-->
+    <div class="row">
+      <div class="col-md-6">
+        <span class="margin-sides-ten margin-topbottom-zero italics-sub">{{=diploma.title}}</span>
+      </div>
+      <div class="col-md-6">
+        <h5 class="pull-right margin-sides-ten margin-topbottom-zero">
+            {{=get_datemonthyear(diploma.datefrom)}}  -  {{=get_datemonthyear(diploma.dateto)}}
+            {{if diploma.ongoing:}}
+                <em>(Ongoing)</em>
+              {{pass}}
+        </h5>
+        </div>
+    </div><!--/End Row-->
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li class="margin-topbottom-five">
+            <span class="bolded">Focus of Study:</span> {{=diploma.studyfocus}}
+          </li>
+            {{if diploma.honors:}}
+          <li class="margin-topbottom-five">
+            <span class="bolded">Honors:</span>
+                {{for honor in diploma.honors:}}
+                  {{=honor}},
+                {{pass}}
+          </li>
+            {{pass}}
+            {{if diploma.extra:}}
+            <li class="margin-topbottom-five">
+              <span class="bolded">Extracurriculars:</span> 
+                {{for ex in diploma.extra:}}
+                    {{=ex}},
+                {{pass}}
+            </li>
+            {{pass}}
+        </ul>
+      <br />
+      </div>
+    </div><!--/End Row-->
+    {{pass}}
+
+    {{include 'cv-courses.html'}}
+    </div><!--/End 12-->
+</div><!--/End Eduction Row -->
